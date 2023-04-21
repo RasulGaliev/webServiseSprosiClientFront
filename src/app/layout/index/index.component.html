@@ -1,0 +1,20 @@
+<div *ngIf="isPsysLoaded && isClientDataLoaded" class="index-page">
+  <mat-card class="post-card" *ngFor="let psy of psys; let i = index">
+    <mat-card-header style="text-align: left">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{psy.name}}</mat-card-title>
+      <mat-card-subtitle>{{psy.estimation | number: '.1-1'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="formatImage(psy.photo)" alt="post image">
+    <mat-card-content>
+      <p>{{psy.description}}</p>
+    </mat-card-content>
+
+    <div style="text-align: left">
+      <p *ngFor="let review of psy.reviewsCl"><span style="font-weight: 500">{{review.nameClient}}</span>: {{review.text}}</p>
+    </div>
+
+    <button mat-menu-item routerLink="/psy/{{psy.id}}">Go on</button>
+
+  </mat-card>
+</div>

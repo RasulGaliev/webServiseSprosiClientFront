@@ -1,0 +1,59 @@
+<div *ngIf="isClientDataLoaded" class="client-profile">
+
+  <h1>Profile</h1>
+  <div style="text-align: right">
+    <button mat-flat-button color="primary" (click)="openEditDialog()">Edit Info</button>
+  </div>
+
+  <div style="padding-top: 2rem" class="row">
+    <div class="col">
+      <img class="profile-image" [src]="previewImgURL || formatImage(clientProfileImage) || 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="client photo">
+
+      <input type="file"
+             style="display: none"
+             #fileInput
+             (change)="onFileSelected($event)">
+
+      <button mat-button (click)="fileInput.click()">Pick File</button>
+      <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
+    </div>
+    <div class="col" style="text-align: left">
+
+      <h2>{{client.login}}</h2>
+
+      <h3 style="font-style: italic">{{client.name}}</h3>
+    </div>
+
+    <mat-divider style="margin: 2rem 0"></mat-divider>
+
+<!--    записи-->
+
+<!--    <h2>{{appointments.length}} Appointments</h2>-->
+
+<!--    <mat-card class="post-card" *ngFor="let appointment of client.appointmentsCl; let i = index">-->
+<!--      <mat-card-header style="text-align: left">-->
+<!--        <div mat-card-avatar class="example-header-image"></div>-->
+<!--        <mat-card-title>{{appointment.date}}</mat-card-title>-->
+<!--        <mat-card-subtitle>{{appointment.psyId}}</mat-card-subtitle>-->
+<!--      </mat-card-header>-->
+<!--&lt;!&ndash;      <img mat-card-image [src]="formatImage(post.image)" alt="post image">&ndash;&gt;-->
+<!--&lt;!&ndash;      <mat-card-content>&ndash;&gt;-->
+<!--&lt;!&ndash;        <p>&ndash;&gt;-->
+<!--&lt;!&ndash;          {{post.caption}}&ndash;&gt;-->
+<!--&lt;!&ndash;        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;      </mat-card-content>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <mat-card-actions align="end">&ndash;&gt;-->
+<!--&lt;!&ndash;        <button color="warn" mat-button (click)="removeAppointment(appointment, i)">&ndash;&gt;-->
+<!--&lt;!&ndash;          <mat-icon color="warn">delete</mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;          Remove Appointment&ndash;&gt;-->
+<!--&lt;!&ndash;        </button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </mat-card-actions>&ndash;&gt;-->
+
+<!--    </mat-card>-->
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>
