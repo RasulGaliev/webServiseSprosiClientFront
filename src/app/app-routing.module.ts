@@ -8,10 +8,12 @@ import {ProfileComponent} from "./client/profile/profile.component";
 import {FinishedAppointmentsComponent} from "./client/finished-appointments/finished-appointments.component";
 import {ClientAppointmentsComponent} from "./client/client-appointments/client-appointments.component";
 import {PsyComponent} from "./layout/psy/psy.component";
+import {ActivationComponent} from "./auth/activation/activation.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'activate/:code', component: ActivationComponent},
   {path: 'main', component: IndexComponent, canActivate: [AuthGuardService]},
   {
     path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService],
@@ -20,7 +22,7 @@ const routes: Routes = [
       {path: 'finishedApps', component: FinishedAppointmentsComponent, canActivate: [AuthGuardService]}
     ]
   },
-  {path: 'psy/:id', component: PsyComponent},
+  {path: 'psy/:id', component: PsyComponent, canActivate: [AuthGuardService]},
   {path: '', redirectTo: 'main', pathMatch: 'full'}
 ];
 

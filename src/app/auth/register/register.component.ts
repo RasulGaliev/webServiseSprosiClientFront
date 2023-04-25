@@ -21,8 +21,9 @@ export class RegisterComponent {
   createRegisterForm(): FormGroup {
     return this.fb.group({
       name: ['', Validators.compose([Validators.required])],
-      login: ['', Validators.compose([Validators.required])],
+      email: ['', Validators.compose([Validators.required])],
       password: ['', Validators.compose([Validators.required])],
+      confirmedPassword: ['', Validators.compose([Validators.required])]
     });
   }
 
@@ -31,9 +32,9 @@ export class RegisterComponent {
 
     this.authService.register({
       name: this.registerForm.value.name,
-      login: this.registerForm.value.login,
+      email: this.registerForm.value.email,
       password: this.registerForm.value.password,
-      appointmentsCl: []
+      confirmedPassword:  this.registerForm.value.confirmedPassword
     }).subscribe(data => {
       console.log(data);
       this.notificationService.showSnackBar('Successfully Registered!');

@@ -3,5 +3,6 @@ export interface Appointment{
   date: Date,
   status?: boolean,
   psyId?: number,
-  psyName?: string
+  psyName?: string,
+  link?: string
 }

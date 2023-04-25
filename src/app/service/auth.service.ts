@@ -22,4 +22,8 @@ export class AuthService {
   public register(client: Client): Observable<any>{
     return this.http.post(AUTH_API + 'registration', client)
   }
+
+  public activation(code: string): Observable<any>{
+    return this.http.get(AUTH_API + 'activate/' + code);
+  }
 }
