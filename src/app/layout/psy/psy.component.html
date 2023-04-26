@@ -1,74 +1,74 @@
-<div *ngIf="isPsyLoaded" class="psy-profile">
+<div class="intro">
+  <div class="home_intro_inner">
+    <div *ngIf="isPsyLoaded" class="psy-profile">
 
-  <h1>PsyPage</h1>
-<!--  <div style="text-align: right">-->
-<!--    <button mat-flat-button color="primary" (click)="openEditDialog()">Edit Info</button>-->
-<!--  </div>-->
-
-  <div style="padding-top: 2rem" class="row">
-    <div class="col">
-      <img class="profile-image" [src]="previewImgURL || formatImage(psyProfileImage) || 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="psy photo">
-    </div>
-    <div class="col" style="text-align: left">
-
-      <h2>{{psy.name}}</h2>
-      <h1>{{psy.description}}</h1>
-    </div>
-
-    <mat-divider style="margin: 2rem 0"></mat-divider>
-
-    <mat-card-actions align="end">
-
-        <mat-form-field appearance="fill">
-          <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="newDate" (dateChange)="dateChanged($event)">
-          <mat-hint>MM/DD/HH/YYYY</mat-hint>
-          <mat-datepicker-toggle matIconSuffix [for]="newDate" ></mat-datepicker-toggle>
-          <mat-datepicker #newDate></mat-datepicker>
-        </mat-form-field>
-
-        <div *ngIf="isDateLoaded" class="chose-time">
-          <mat-card class="time-card" *ngFor="let time of freeDate; let i = index">
-            <mat-card-header style="text-align: left">
-              <mat-card-title>{{time.getHours()}} : 00</mat-card-title>
-            </mat-card-header>
-
-            <button mat-flat-button color="primary" (click)="createApp(psy.id, time.getHours())">
-              Create Appointment
-            </button>
-
-          </mat-card>
+      <div style="padding-top: 2rem" class="row">
+        <div style="display: flex">
+          <img class="profile-image" [src]="previewImgURL || formatImage(psyProfileImage) || 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="psy photo">
+          <div style="text-align: left; margin-left: 30px">
+            <h2 style="font-weight: bold">{{psy.name}}</h2>
+            <h1>{{psy.description}}</h1>
+          </div>
         </div>
-    </mat-card-actions>
 
-    <!--    записи-->
+        <mat-divider style="margin: 2rem 0"></mat-divider>
 
-    <!--    <h2>{{appointments.length}} Appointments</h2>-->
+        <mat-card-actions align="end">
 
-    <!--    <mat-card class="post-card" *ngFor="let appointment of client.appointmentsCl; let i = index">-->
-    <!--      <mat-card-header style="text-align: left">-->
-    <!--        <div mat-card-avatar class="example-header-image"></div>-->
-    <!--        <mat-card-title>{{appointment.date}}</mat-card-title>-->
-    <!--        <mat-card-subtitle>{{appointment.psyId}}</mat-card-subtitle>-->
-    <!--      </mat-card-header>-->
-    <!--&lt;!&ndash;      <img mat-card-image [src]="formatImage(post.image)" alt="post image">&ndash;&gt;-->
-    <!--&lt;!&ndash;      <mat-card-content>&ndash;&gt;-->
-    <!--&lt;!&ndash;        <p>&ndash;&gt;-->
-    <!--&lt;!&ndash;          {{post.caption}}&ndash;&gt;-->
-    <!--&lt;!&ndash;        </p>&ndash;&gt;-->
-    <!--&lt;!&ndash;      </mat-card-content>&ndash;&gt;-->
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="newDate" (dateChange)="dateChanged($event)">
+            <mat-hint>MM/DD/HH/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="newDate" ></mat-datepicker-toggle>
+            <mat-datepicker #newDate></mat-datepicker>
+          </mat-form-field>
 
-    <!--&lt;!&ndash;      <mat-card-actions align="end">&ndash;&gt;-->
-    <!--&lt;!&ndash;        <button color="warn" mat-button (click)="removeAppointment(appointment, i)">&ndash;&gt;-->
-    <!--&lt;!&ndash;          <mat-icon color="warn">delete</mat-icon>&ndash;&gt;-->
-    <!--&lt;!&ndash;          Remove Appointment&ndash;&gt;-->
-    <!--&lt;!&ndash;        </button>&ndash;&gt;-->
-    <!--&lt;!&ndash;      </mat-card-actions>&ndash;&gt;-->
+          <div *ngIf="isDateLoaded" class="chose-time">
+            <mat-card class="time-card" *ngFor="let time of freeDate; let i = index">
+              <mat-card-header style="text-align: left">
+                <mat-card-title>{{time.getHours()}} : 00</mat-card-title>
+              </mat-card-header>
 
-    <!--    </mat-card>-->
+              <button mat-flat-button color="primary" (click)="createApp(psy.id, time.getHours())">
+                Create Appointment
+              </button>
 
-    <router-outlet></router-outlet>
+            </mat-card>
+          </div>
+        </mat-card-actions>
 
+        <!--    записи-->
+
+        <!--    <h2>{{appointments.length}} Appointments</h2>-->
+
+        <!--    <mat-card class="post-card" *ngFor="let appointment of client.appointmentsCl; let i = index">-->
+        <!--      <mat-card-header style="text-align: left">-->
+        <!--        <div mat-card-avatar class="example-header-image"></div>-->
+        <!--        <mat-card-title>{{appointment.date}}</mat-card-title>-->
+        <!--        <mat-card-subtitle>{{appointment.psyId}}</mat-card-subtitle>-->
+        <!--      </mat-card-header>-->
+        <!--&lt;!&ndash;      <img mat-card-image [src]="formatImage(post.image)" alt="post image">&ndash;&gt;-->
+        <!--&lt;!&ndash;      <mat-card-content>&ndash;&gt;-->
+        <!--&lt;!&ndash;        <p>&ndash;&gt;-->
+        <!--&lt;!&ndash;          {{post.caption}}&ndash;&gt;-->
+        <!--&lt;!&ndash;        </p>&ndash;&gt;-->
+        <!--&lt;!&ndash;      </mat-card-content>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;      <mat-card-actions align="end">&ndash;&gt;-->
+        <!--&lt;!&ndash;        <button color="warn" mat-button (click)="removeAppointment(appointment, i)">&ndash;&gt;-->
+        <!--&lt;!&ndash;          <mat-icon color="warn">delete</mat-icon>&ndash;&gt;-->
+        <!--&lt;!&ndash;          Remove Appointment&ndash;&gt;-->
+        <!--&lt;!&ndash;        </button>&ndash;&gt;-->
+        <!--&lt;!&ndash;      </mat-card-actions>&ndash;&gt;-->
+
+        <!--    </mat-card>-->
+
+        <router-outlet></router-outlet>
+
+      </div>
+
+    </div>
   </div>
-
 </div>
+
+

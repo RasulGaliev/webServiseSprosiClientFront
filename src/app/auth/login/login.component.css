@@ -12,3 +12,29 @@
 mat-form-field {
   width: 50%;
 }
+
+*{
+  color: #1A1A1A;
+}
+
+/**:hover {*/
+/*  color: #28a1be;*/
+/*}*/
+
+
+.login_form {
+  max-width: 500px;
+}
+
+.login_form:focus {
+  background: #28a1be;
+}
+
+.registered_link:hover {
+  color: #28a1be;
+}
+
+
+.login_link:hover {
+  color: #28a1be;
+}

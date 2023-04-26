@@ -6,3 +6,23 @@
 mat-form-field {
   width: 50%;
 }
+
+*{
+  color: #1A1A1A;
+}
+
+/**:hover {*/
+/*  color: #28a1be;*/
+/*}*/
+
+*:focus {
+  border-color: yellow;
+}
+
+.register_form {
+  max-width: 500px;
+}
+
+.login_link:hover {
+  color: #28a1be;
+}

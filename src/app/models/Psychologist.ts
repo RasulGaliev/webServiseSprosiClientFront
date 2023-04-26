@@ -7,7 +7,7 @@ export interface Psychologist{
   estimation: number,
   description?: string,
   photo: File,
-
+  flag?: boolean,
   reviewsCl?: Review[],
   appointmentsCl?: Appointment[]
 }

@@ -1,39 +1,43 @@
 <div class="register-page">
-  <h2>Register</h2>
-  <p>Already have an account?  <a routerLink="/login">Sign in</a></p>
+  <h2>Регистрация</h2>
+  <p>Уже зарегистрировались?
+    <a routerLink="/login" class="login_link">Войти</a>
+  </p>
   <form [formGroup]="registerForm">
     <div class="justify-content-center">
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
+      <mat-form-field appearance="outline" class="register_form">
+        <mat-label>Имя</mat-label>
         <input matInput
                formControlName="name">
       </mat-form-field>
     </div>
+
     <div class="justify-content-center">
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
+      <mat-form-field appearance="outline" class="register_form">
+        <mat-label>Почта</mat-label>
         <input matInput
                formControlName="email">
       </mat-form-field>
     </div>
+
     <div class="justify-content-center">
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
+      <mat-form-field appearance="outline" class="register_form">
+        <mat-label>Пароль</mat-label>
         <input type="password" matInput
                formControlName="password">
       </mat-form-field>
     </div>
 
-    <div class="justify-content-center">
-      <mat-form-field appearance="outline">
-        <mat-label>Confirmed Password</mat-label>
+    <div class="justify-content-center" >
+      <mat-form-field appearance="outline" class="register_form">
+        <mat-label>Повторить пароль</mat-label>
         <input type="password" matInput
                formControlName="confirmedPassword">
       </mat-form-field>
     </div>
 
-    <button style="width: 5rem" [disabled]="registerForm.invalid" (click)="submit()" mat-flat-button color="primary">
-      Register
+    <button style="background: #52ADCA; width: 20%;" [disabled]="registerForm.invalid" (click)="submit()" mat-flat-button >
+      Зарегистрироваться
     </button>
 
   </form>

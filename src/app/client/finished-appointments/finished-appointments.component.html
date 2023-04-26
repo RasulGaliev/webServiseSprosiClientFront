@@ -1,9 +1,11 @@
 <div *ngIf="isFinishedAppsLoaded" xmlns="http://www.w3.org/1999/html">
   <div style="text-align: right">
-    <button mat-flat-button color="primary" routerLink="/profile">My Appointments</button>
+    <button mat-flat-button style="background: #52ADCA" routerLink="/profile">My Appointments</button>
   </div>
   <h2>{{finishedAppointments.length}} Finished Appointments</h2>
+  <div style="display: block">
 
+  </div>
   <mat-card class="appointment-card" *ngFor="let appointment of finishedAppointments; let i = index">
     <mat-card-header style="text-align: left">
       <div mat-card-avatar class="example-header-image"></div>
@@ -15,36 +17,28 @@
       <form [formGroup]="reviewForm">
 
         <mat-form-field class="w-100" appearance="outline">
-          <mat-label>Text</mat-label>
+          <mat-label>Текст</mat-label>
           <input matInput
                  formControlName="text">
         </mat-form-field>
+
         <mat-form-field class="w-100" appearance="outline">
-          <mat-label>Estimation</mat-label>
+          <mat-label>Оценка</mat-label>
           <input matInput
                  formControlName="estimation">
         </mat-form-field>
 
-        <button mat-flat-button color="primary" [disabled]="reviewForm.invalid" (click)="closeApp(appointment.id)">
+        <mat-slider min="1" max="5" step="1" >
+          <input matSliderThumb>
+        </mat-slider>
+
+        <button mat-flat-button style="background: #52ADCA" [disabled]="reviewForm.invalid" (click)="closeApp(appointment.id)">
           <!--        <mat-icon color="warn">delete</mat-icon>-->
           Close Appointment
         </button>
 
       </form>
+
     </mat-card-actions>
-    <!--      <img mat-card-image [src]="formatImage(post.image)" alt="post image">-->
-    <!--      <mat-card-content>-->
-    <!--        <p>-->
-    <!--          {{post.caption}}-->
-    <!--        </p>-->
-    <!--      </mat-card-content>-->
-
-    <!--      <mat-card-actions align="end">-->
-    <!--        <button color="warn" mat-button (click)="removeAppointment(appointment, i)">-->
-    <!--          <mat-icon color="warn">delete</mat-icon>-->
-    <!--          Remove Appointment-->
-    <!--        </button>-->
-    <!--      </mat-card-actions>-->
-
   </mat-card>
 </div>

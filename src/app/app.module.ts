@@ -23,7 +23,13 @@ import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
 import { ActivationComponent } from './auth/activation/activation.component';
-
+import {HeaderComponent} from "./layout/header/header.component";
+import {HomeComponent} from "./client/home/home.component";
+import {SpecialistListComponent} from "./client/specialist-list/specialist-list.component";
+import { RatingModule } from "primeng/rating";
+import {AboutComponent} from "./information/about/about.component";
+import {ContactsComponent} from "./information/contacts/contacts.component";
+import {MatSliderModule} from "@angular/material/slider";
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +42,12 @@ import { ActivationComponent } from './auth/activation/activation.component';
     FinishedAppointmentsComponent,
     ClientAppointmentsComponent,
     PsyComponent,
-    ActivationComponent
+    ActivationComponent,
+    HeaderComponent,
+    HomeComponent,
+    SpecialistListComponent,
+    AboutComponent,
+    ContactsComponent
   ],
     imports: [
         BrowserModule,
@@ -49,7 +60,9 @@ import { ActivationComponent } from './auth/activation/activation.component';
         MatDatepickerModule,
         MatInputModule,
         MatFormFieldModule,
-        MatNativeDateModule
+        MatNativeDateModule,
+      RatingModule,
+      MatSliderModule
     ],
   providers: [authInterceptorProviders, authErrorInterceptorProvider],
   bootstrap: [AppComponent]

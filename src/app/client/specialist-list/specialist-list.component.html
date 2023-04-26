@@ -1,0 +1,111 @@
+<div class="intro">
+  <div class="home_intro_inner">
+    <div *ngIf="isPsysLoaded && isClientDataLoaded" class="index-page">
+      <mat-card class="post-card" *ngFor="let psy of psys; let i = index">
+        <mat-card-header class="card-header">
+<!--                style="text-align: left-->
+          <mat-card-title style="color:#28a1be">
+            {{psy.name}}
+          </mat-card-title>
+
+        </mat-card-header>
+<!--            <img mat-card-image [src]="formatImage(psy.photo)" alt="post image">-->
+        <div style="display: flex">
+          <div style="display: grid">
+            <img class="specialist_photo" [src]="previewImgURL ||
+          'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="psy photo">
+            <!--          || formatImage(psyProfileImage)-->
+            <!--          <img class="specialist_photo" src="./assets/photo/specialist4.jpg" alt="my image">-->
+            <button class="specialist_button" routerLink="/psy/{{psy.id}}">
+              Выбрать специалиста
+            </button>
+          </div>
+
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-content>
+            <p class="specialist_description">{{psy.description}}</p>
+            <p style="font-weight: bold; margin-top: 30px" >Отзывы</p>
+            <div style="text-align: left">
+              <p *ngFor="let review of psy.reviewsCl | slice:0:3">
+                <span style="margin-left: 25px; font-weight: 500">
+                  {{review.nameClient}}
+                </span>: {{review.text}}
+              </p>
+            </div>
+            <div *ngIf="psy.flag" style="text-align: left">
+              <p *ngFor="let review of psy.reviewsCl | slice:3">
+                <span style="margin-left: 25px; font-weight: 500">
+                  {{review.nameClient}}
+                </span>: {{review.text}}
+              </p>
+            </div>
+            <button (click)="psy.flag = true" *ngIf="!psy.flag">
+              Показать больше
+            </button>
+            <button (click)="psy.flag = false" *ngIf="psy.flag">
+              Скрыть
+            </button>
+<!--            <button (click)="showMoreReview.splice(i,1,true)" *ngIf="!showMoreReview[i]">-->
+<!--              Показать больше-->
+<!--            </button>-->
+<!--            <button (click)="showMoreReview.splice(i,1,false)" *ngIf="showMoreReview[i]">-->
+<!--              Скрыть-->
+<!--            </button>-->
+
+
+            <div class="estimation">
+              <p-rating [(ngModel)]=" psy.estimation" [cancel]="false"></p-rating>
+              <p class="estimation_text">{{psy.estimation | number: '1.1-1'}}</p>
+            </div>
+          </mat-card-content>
+        </div>
+
+
+      </mat-card>
+  </div>
+
+  <!--</div>-->
+  <!--<div class="card">-->
+  <!--  <h5 class="card-header">{{ specialist.name }}</h5>-->
+  <!--  <div class="card-body">-->
+  <!--    <div class="specialist_button_image">-->
+  <!--      <img class="specialist_image" src="{{ specialist.photo }}">-->
+  <!--      <br>-->
+  <!--      &lt;!&ndash;      <br>&ndash;&gt;-->
+  <!--      <button class="specialist_button" routerLink="../appointment/specialist_appointment">-->
+  <!--        Выбрать Cпециалиста-->
+  <!--      </button>-->
+  <!--    </div>-->
+  <!--    <div class="specialist_text">-->
+  <!--      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab distinctio dolorem eveniet facere, nobis odio placeat praesentium rem rerum saepe vitae voluptates. Ab beatae deserunt exercitationem labore molestias non tempore?-->
+  <!--      <br><br><br><br><br><br><br>-->
+  <!--      {{ specialist.estimation }}-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+
+
+  <!--<div *ngIf="isPsysLoaded && isClientDataLoaded" class="index-page">-->
+  <!--  <mat-card class="post-card" *ngFor="let psy of psys; let i = index">-->
+  <!--    <mat-card-header class="card-header">-->
+  <!--      &lt;!&ndash;      style="text-align: left&ndash;&gt;-->
+  <!--      <div mat-card-avatar class="example-header-image"></div>-->
+  <!--      <mat-card-title>{{psy.name}}</mat-card-title>-->
+
+  <!--    </mat-card-header>-->
+  <!--    &lt;!&ndash;    <img mat-card-image [src]="formatImage(psy.photo)" alt="post image">&ndash;&gt;-->
+  <!--    <img src="./assets/photo/specialist1.png" alt="my image">-->
+  <!--    <mat-card-content>-->
+  <!--      <p>{{psy.description}}</p>-->
+  <!--    </mat-card-content>-->
+  <!--    <mat-card-subtitle>{{psy.estimation | number: '.1-1'}}</mat-card-subtitle>-->
+  <!--    <div style="text-align: left">-->
+  <!--      <p *ngFor="let review of psy.reviewsCl"><span style="font-weight: 500">{{review.nameClient}}</span>: {{review.text}}</p>-->
+  <!--    </div>-->
+
+  <!--    <button mat-menu-item routerLink="/psy/{{psy.id}}">Go on</button>-->
+
+  <!--  </mat-card>-->
+  </div>
+
+</div>

@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
+import {Client} from "../../models/Client";
 import {TokenStorageService} from "../../service/token-storage.service";
 import {ClientService} from "../../service/client.service";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {NotificationService} from "../../service/notification.service";
 import {EditClientComponent} from "../edit-client/edit-client.component";
-import {Client} from "../../models/Client";
+import {Appointment} from "../../models/Appointment";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -25,7 +27,8 @@ export class ProfileComponent implements OnInit{
   constructor(private tokenService: TokenStorageService,
               private clientService: ClientService,
               private dialog: MatDialog,
-              private notificationService: NotificationService) {
+              private notificationService: NotificationService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -71,6 +74,11 @@ export class ProfileComponent implements OnInit{
           this.notificationService.showSnackBar('Profile Photo upload Successfully');
         })
     }
+  }
+
+  logout(): void {
+    this.tokenService.logOut();
+    this.router.navigate(['/login']);
   }
 
 }

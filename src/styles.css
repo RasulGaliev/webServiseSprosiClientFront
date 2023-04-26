@@ -11,3 +11,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-outline-gap {
   border-top-color: currentColor !important;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  /*background: #ffffff;*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.6; /*межстрочный интервал*/
+  color: #1A1A1A; /*цвет текста*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box; /*??*/
+}
+
+.intro_inner   {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro {
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto;
+}
