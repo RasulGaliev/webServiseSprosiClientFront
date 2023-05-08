@@ -32,12 +32,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro_inner   {
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .intro {
   width: 100%;
   max-width: 1168px;
   margin: 0 auto;
+}
+
+h1 {
+  font-size:36px !important;
+  line-height:50px !important;
+}
+
+h2 {
+  font-size: 20px !important;
+  line-height:35px !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1500px){
+  body {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  * {
+    font-size: 14px;
+  }
+  h1 {
+    font-size:30px !important;
+    line-height:30px !important;
+  }
+  h2 {
+    font-size: 15px !important;
+    line-height:25px !important;
+  }
+}
+
+@media screen and (min-resolution: 150dpi), screen and (max-width: 900px) {
+  body {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 10px;
+  }
+  * {
+    font-size: 10px;
+  }
+  h1 {
+    font-size:20px !important;
+    line-height:30px !important;
+  }
+  h2 {
+    font-size: 12px !important;
+    line-height:20px !important;
+  }
+
 }

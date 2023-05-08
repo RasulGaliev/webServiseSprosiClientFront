@@ -8,6 +8,8 @@ export interface Psychologist{
   description?: string,
   photo: File,
   flag?: boolean,
-  reviewsCl?: Review[],
+  flagButton?: boolean,
+  flagAdmin?: boolean;
+  reviewsCl: Review[],
   appointmentsCl?: Appointment[]
 }

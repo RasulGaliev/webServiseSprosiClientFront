@@ -1,17 +1,19 @@
 <div class="intro">
   <div class="intro_inner">
     <div *ngIf="isClientDataLoaded" class="client-profile">
-
-      <div style="text-align: right">
-        <button (click)="logout()" class="logout_button">
-          Logout
-        </button>
-      </div>
-
       <div class="row">
-        <div style="display: flex;">
+        <div>
+          <div style="text-align: right">
+            <button (click)="logout()" class="logout_button">
+              Logout
+            </button>
+          </div>
           <div>
-            <img class="profile-image" [src]="previewImgURL || formatImage(clientProfileImage) || 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="client photo">
+<!--            <div style="margin-left: 50px">-->
+<!--              <h2>{{client.email}}</h2>-->
+              <h1>{{client.name}}</h1>
+<!--            </div>-->
+            <img class="profile-image" [src]="previewImgURL ||  formatImage(clientProfileImage) || 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="client photo">
             <input type="file"
                    style="display: none"
                    #fileInput
@@ -27,12 +29,11 @@
             </button>
           </div>
 
-          <div style="margin-left: 50px">
-            <h2>{{client.email}}</h2>
-            <h1>{{client.name}}</h1>
-          </div>
+
+
 
         </div>
+
 
         <mat-divider style="margin: 2rem 0"></mat-divider>
         <router-outlet></router-outlet>

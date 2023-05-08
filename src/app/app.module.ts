@@ -30,6 +30,7 @@ import { RatingModule } from "primeng/rating";
 import {AboutComponent} from "./information/about/about.component";
 import {ContactsComponent} from "./information/contacts/contacts.component";
 import {MatSliderModule} from "@angular/material/slider";
+import {FlexLayoutModule} from "@angular/flex-layout";
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import {MatSliderModule} from "@angular/material/slider";
         MaterialModule,
         HttpClientModule,
         FormsModule,
+        [FlexLayoutModule],
         MatDatepickerModule,
         MatInputModule,
         MatFormFieldModule,

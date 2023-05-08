@@ -22,8 +22,8 @@ export class SpecialistListComponent implements OnInit {
   psyProfileImage: File;
 // @ts-ignore
 
-  showMoreReview: Array<boolean> = Array(1000).fill(false);
 
+  // showMoreReview: Array<boolean> = Array(1000).fill(false);
 
 
   constructor(private clientService: ClientService) {
@@ -36,10 +36,14 @@ export class SpecialistListComponent implements OnInit {
         this.size = data.length;
         this.psys = data;
         this.isPsysLoaded = true;
+        for(let i = 0; i < this.size; i++) {
+          if (this.psys[i].reviewsCl.length > 3)
+            this.psys[i].flagButton = true;
+          if (this.psys[i].name == "Admin")
+            this.psys[i].flagAdmin = true;
+        }
       })
-    for(let i = 0; i < this.size; i++) {
-      this.psys[i].flag = false;
-    }
+
     this.clientService.getCurrentClient()
       .subscribe(data => {
         this.client = data;
