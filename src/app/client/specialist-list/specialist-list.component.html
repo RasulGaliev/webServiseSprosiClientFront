@@ -4,13 +4,10 @@
       <mat-card class="post-card" *ngFor="let psy of psys; let i = index">
         <div *ngIf="!psy.flagAdmin">
           <mat-card-header class="card-header">
-            <!--                style="text-align: left-->
             <mat-card-title style="color:#28a1be">
               {{psy.name}}
             </mat-card-title>
-
           </mat-card-header>
-          <!--            <img mat-card-image [src]="formatImage(psy.photo)" alt="post image">-->
           <div class="card_display">
             <div style="display: block">
               <div>
@@ -18,12 +15,14 @@
               </div>
               <button class="specialist_button" routerLink="/psy/{{psy.id}}">
                 Выбрать специалиста
+<!--                {{psy.price}}₽-->
               </button>
             </div>
-
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-content>
               <p class="specialist_description">{{psy.description}}</p>
+<!--              <p style="font-weight: bold">{{psy.price}}₽</p>-->
+<!--              <p>{{psy.sex}}</p>-->
               <div class="estimations">
                 <p style="font-weight: bold; margin-top: 30px" >Отзывы {{psy.reviewsCl.length}}</p>
                 <div style="text-align: left">
@@ -49,17 +48,15 @@
                   Скрыть
                 </button>
               </div>
-              <div class="estimation">
+              <div class="estimation" *ngIf="psy.flagReview">
                 <p-rating [(ngModel)]=" psy.estimation" [cancel]="false"></p-rating>
                 <p class="estimation_text">{{psy.estimation | number: '1.1-1'}}</p>
               </div>
+              <p style="font-weight: bold; margin-top: 30px;">Цена: {{psy.price}}₽</p>
             </mat-card-content>
           </div>
-
         </div>
-
       </mat-card>
   </div>
   </div>
-
 </div>

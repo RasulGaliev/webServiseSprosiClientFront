@@ -2,44 +2,29 @@
   <div class="intro_inner">
     <div *ngIf="isClientDataLoaded" class="client-profile">
       <div class="row">
-        <div>
-          <div style="text-align: right">
-            <button (click)="logout()" class="logout_button">
-              Logout
-            </button>
-          </div>
-          <div>
-<!--            <div style="margin-left: 50px">-->
-<!--              <h2>{{client.email}}</h2>-->
+        <div class="profile">
+          <div style="margin-right: 20px">
+            <div style="display: flex; align-items: center;">
               <h1>{{client.name}}</h1>
-<!--            </div>-->
+              <a (click)="logout()" style="margin-left: 5px; display: flex"><!--                <h1>Выйти</h1>-->
+                <img class="logout" src="../../../assets/images/logout.svg" alt="logout">
+              </a>
+            </div>
+            <h2 style="font-weight: bold">{{client.money}}₽</h2>
             <img class="profile-image" [src]="previewImgURL ||  formatImage(clientProfileImage) || 'https://png.pngtree.com/png-clipart/20201208/original/pngtree-cartoon-family-avatar-face-picture-kid-png-image_5519203.jpg'" alt="client photo">
-            <input type="file"
-                   style="display: none"
-                   #fileInput
-                   (change)="onFileSelected($event)">
-            <button mat-button (click)="fileInput.click()">
-              Pick File
-            </button>
-            <button mat-button *ngIf="selectedFile" (click)="onUpload()">
-              Upload
-            </button>
-            <button mat-flat-button style="background: #52ADCA" (click)="openEditDialog()">
-              Edit Info
-            </button>
+            <input type="file" style="display: none" #fileInput (change)="onFileSelected($event)">
+            <div style="display: block">
+              <div><button mat-button (click)="fileInput.click()">Выберите файл</button></div>
+              <div><button mat-button *ngIf="selectedFile" (click)="onUpload()">Загрузить</button></div>
+              <div><button mat-flat-button style="background: #52ADCA" (click)="openEditDialog()">Редактировать</button></div>
+            </div>
           </div>
-
-
-
+          <div><router-outlet></router-outlet></div>
 
         </div>
-
-
         <mat-divider style="margin: 2rem 0"></mat-divider>
-        <router-outlet></router-outlet>
       </div>
     </div>
-
   </div>
 </div>
 

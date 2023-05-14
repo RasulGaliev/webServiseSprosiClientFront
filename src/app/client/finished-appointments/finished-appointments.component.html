@@ -1,10 +1,9 @@
 <div *ngIf="isFinishedAppsLoaded" xmlns="http://www.w3.org/1999/html">
   <div style="text-align: right">
-    <button mat-flat-button style="background: #52ADCA" routerLink="/profile">My Appointments</button>
+    <button mat-flat-button style="background: #52ADCA" routerLink="/profile">Мои консультации</button>
   </div>
-  <h2>{{finishedAppointments.length}} Finished Appointments</h2>
+  <h2>{{finishedAppointments.length}} Завершенные консультации</h2>
   <div style="display: block">
-
   </div>
   <mat-card class="appointment-card" *ngFor="let appointment of finishedAppointments; let i = index">
     <mat-card-header style="text-align: left">
@@ -34,7 +33,7 @@
 
         <button mat-flat-button style="background: #52ADCA" [disabled]="reviewForm.invalid" (click)="closeApp(appointment.id)">
           <!--        <mat-icon color="warn">delete</mat-icon>-->
-          Close Appointment
+          Закрыть консультацию
         </button>
 
       </form>

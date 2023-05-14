@@ -18,10 +18,10 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'activate/:code', component: ActivationComponent},
-  {path: 'specialistList', component: SpecialistListComponent},
+  {path: 'specialistList', component: SpecialistListComponent, canActivate: [AuthGuardService]},
   {path: 'about', component: AboutComponent},
   {path: 'contacts', component: ContactsComponent},
-  {path: 'main', component: HomeComponent, canActivate: [AuthGuardService]},
+  {path: 'main', component: HomeComponent}, //, canActivate: [AuthGuardService]
   {
     path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService],
     children: [

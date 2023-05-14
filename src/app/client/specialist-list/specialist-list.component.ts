@@ -41,6 +41,10 @@ export class SpecialistListComponent implements OnInit {
             this.psys[i].flagButton = true;
           if (this.psys[i].name == "Admin")
             this.psys[i].flagAdmin = true;
+          if (this.psys[i].reviewsCl.length > 0)
+            this.psys[i].flagReview = true;
+          if (this.psys[i].price <= this.client.money)
+            this.psys[i].flagMoney = true;
         }
       })
 

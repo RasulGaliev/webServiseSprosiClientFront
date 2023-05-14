@@ -1,8 +1,8 @@
 <div *ngIf="isClientAppointmentsLoaded" xmlns="http://www.w3.org/1999/html">
   <div style="text-align: right">
-    <button mat-flat-button style="background: #52ADCA" routerLink="/profile/finishedApps">Finish Apps</button>
+    <button mat-flat-button style="background: #52ADCA" routerLink="/profile/finishedApps">Завершенные консультации</button>
   </div>
-  <h2>{{appointments.length}} Appointments</h2>
+  <h2>{{appointments.length}} Косультации</h2>
 
   <mat-card class="appointment-card" *ngFor="let appointment of appointments; let i = index">
     <mat-card-header style="text-align: left">

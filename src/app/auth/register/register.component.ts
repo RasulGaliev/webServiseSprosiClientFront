@@ -23,6 +23,7 @@ export class RegisterComponent {
       name: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required])],
       password: ['', Validators.compose([Validators.required])],
+      money: ['', Validators.compose([Validators.required])],
       confirmedPassword: ['', Validators.compose([Validators.required])]
     });
   }
@@ -34,6 +35,7 @@ export class RegisterComponent {
       name: this.registerForm.value.name,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
+      money: this.registerForm.value.money,
       confirmedPassword:  this.registerForm.value.confirmedPassword
     }).subscribe(data => {
       console.log(data);

@@ -14,14 +14,18 @@
         <mat-divider style="margin: 2rem 0"></mat-divider>
 
         <mat-card-actions >
-<!--          align="end"-->
-          <mat-form-field appearance="fill">
-            <mat-label>Выбрать дату</mat-label>
-            <input matInput [matDatepicker]="newDate" (dateChange)="dateChanged($event)">
-            <mat-hint>ММ/ДД/ММ/ГГГГ</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="newDate" ></mat-datepicker-toggle>
-            <mat-datepicker #newDate></mat-datepicker>
-          </mat-form-field>
+<!--          <div *ngIf="psy.flagMoney">-->
+            <mat-form-field appearance="fill">
+              <mat-label>Выбрать дату</mat-label>
+              <input matInput [matDatepicker]="newDate" (dateChange)="dateChanged($event)">
+              <mat-hint>ММ/ДД/ММ/ГГГГ</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="newDate" ></mat-datepicker-toggle>
+              <mat-datepicker #newDate></mat-datepicker>
+            </mat-form-field>
+<!--          </div>-->
+<!--          <div *ngIf="!psy.flagMoney">Недостаточно средств</div>-->
+
+
           <div *ngIf="isDateLoaded" class="chose-time">
             <mat-card class="time-card" *ngFor="let time of freeDate; let i = index">
               <mat-card-header style="text-align: left">

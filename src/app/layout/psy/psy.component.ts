@@ -23,7 +23,7 @@ export class PsyComponent implements OnInit{
   // @ts-ignore
   psyProfileImage: File;
 
-
+  // size: 0 = 0;
   newDate: any;
   freeDate: Date[] = [new Date()];
   // @ts-ignore
@@ -37,6 +37,7 @@ export class PsyComponent implements OnInit{
   }
 
   ngOnInit() {
+
     this.route.params
       .subscribe(params => {
         console.log(params);
@@ -50,6 +51,15 @@ export class PsyComponent implements OnInit{
         this.appointments = data.appointmentsCl;
         console.log(this.appointments);
         this.isPsyLoaded = true;
+        // this.size = data.length;
+        // for(let i = 0; i < this.size; i++) {
+        //   if (this.psys[i].reviewsCl.length > 3)
+        //     this.psys[i].flagButton = true;
+        //   if (this.psys[i].name == "Admin")
+        //     this.psys[i].flagAdmin = true;
+        //   if (this.psys[i].reviewsCl.length > 0)
+        //     this.psys[i].flagReview = true;
+        // }
       });
   }
 
