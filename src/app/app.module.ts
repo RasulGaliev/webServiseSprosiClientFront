@@ -24,7 +24,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatNativeDateModule} from "@angular/material/core";
 import { ActivationComponent } from './auth/activation/activation.component';
 import {HeaderComponent} from "./layout/header/header.component";
-import {HomeComponent} from "./client/home/home.component";
+import {HomeComponent} from "./layout/home/home.component";
 import {SpecialistListComponent} from "./client/specialist-list/specialist-list.component";
 import { RatingModule } from "primeng/rating";
 import {AboutComponent} from "./information/about/about.component";
@@ -66,7 +66,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
       RatingModule,
       MatSliderModule
     ],
-  providers: [authInterceptorProviders, authErrorInterceptorProvider],
+  providers: [authErrorInterceptorProvider, authInterceptorProviders], //authInterceptorProviders authErrorInterceptorProvider
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,7 @@ import {FinishedAppointmentsComponent} from "./client/finished-appointments/fini
 import {ClientAppointmentsComponent} from "./client/client-appointments/client-appointments.component";
 import {PsyComponent} from "./layout/psy/psy.component";
 import {ActivationComponent} from "./auth/activation/activation.component";
-import {HomeComponent} from "./client/home/home.component";
+import {HomeComponent} from "./layout/home/home.component";
 import {SpecialistListComponent} from "./client/specialist-list/specialist-list.component";
 import {ContactsComponent} from "./information/contacts/contacts.component";
 import {AboutComponent} from "./information/about/about.component";

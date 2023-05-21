@@ -49,12 +49,14 @@ export class LoginComponent implements OnInit{
       console.log(data);
 
       this.tokenStorage.saveToken(data.token);
+      // this.tokenStorage.saveRefreshToken(data.refreshToken);
       this.tokenStorage.saveUser(data);
 
       this.notificationService.showSnackBar('Successfully logged in');
       this.router.navigate(['/']);
       window.location.reload();
     }, error => {
+      // this.isLoginFailed = true;
       console.log(error);
       this.notificationService.showSnackBar(error.message);
     });

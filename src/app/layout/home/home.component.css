@@ -38,7 +38,6 @@
   z-index: 10000;
   background: center no-repeat;
   text-align: right;
-  /*url('./assets/images/main_image.jpg')*/
   width: 529px;
   height: 391px;
   /*display: none;*/
@@ -61,16 +60,15 @@
 
 @media screen and (min-width: 900px) and (max-width: 1500px){
   .main_image {
-    width: 380px;
-    height: 300px;
+    width: 400px;
   }
   .main_button {
     background: #52ADCA;
     width: 200px;
-    height: 33px;
+    height: 35px;
     border-radius: 13px;
     color: white;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     border: none;
   }

@@ -1,6 +1,8 @@
 .login-page {
   text-align: center;
   margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 #controls {
@@ -13,17 +15,14 @@ mat-form-field {
   width: 50%;
 }
 
-*{
-  color: #1A1A1A;
+.login_image {
+  width: 700px;
 }
-
-/**:hover {*/
-/*  color: #28a1be;*/
-/*}*/
 
 
 .login_form {
-  max-width: 500px;
+  /*max-width: 500px;*/
+  width: 450px;
 }
 
 .login_form:focus {
@@ -32,9 +31,99 @@ mat-form-field {
 
 .registered_link:hover {
   color: #28a1be;
+
 }
 
 
 .login_link:hover {
   color: #28a1be;
 }
+
+.login_input {
+  margin-top: 100px;
+}
+
+/*.login-button {*/
+/*  width: 100%;*/
+/*  background: #52ADCA;*/
+/*  border-radius: 6px;*/
+/*  color: #ffffff;*/
+/*  font-size: 14px;*/
+/*  border: none;*/
+/*  font-weight: bold;*/
+/*}*/
+
+.login-button {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 6px;
+  border-color: #5e5b5b;
+  color: #5e5b5b;
+  background: #dce2ec;
+  font-weight: bold;
+  font-size: 20px;
+  border-width: 1px;
+}
+
+.register-button {
+  margin-top: 20px;
+  margin-left: 25px;
+  border-radius: 6px;
+  color: #5e5b5b;
+  border: none;
+  background: #dce2ec;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.about-br {
+  padding:10px;
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1500px){
+  .login_form {
+    width: 300px;
+  }
+  .login_image {
+    width: 450px;
+  }
+  .login_input {
+    margin-top: 20px;
+  }
+  .login-button {
+    margin-top: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    border-width: 1px;
+  }
+  .register-button {
+    margin-top: 0;
+    margin-left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .about-br {
+    padding: 0;
+  }
+
+}
+
+@media screen and (min-resolution: 150dpi), screen and (max-width: 900px) {
+  .login_image {
+    display: none;
+  }
+  .login_form {
+    width: 200px;
+  }
+  .login_input {
+    margin-top: 0;
+  }
+  .login-button {
+    font-size: 10px;
+  }
+  .register-button {
+    font-size: 10px;
+  }
+}
+

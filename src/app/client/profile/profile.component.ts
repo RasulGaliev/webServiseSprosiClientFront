@@ -7,6 +7,7 @@ import {NotificationService} from "../../service/notification.service";
 import {EditClientComponent} from "../edit-client/edit-client.component";
 import {Appointment} from "../../models/Appointment";
 import {Router} from "@angular/router";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-profile',
@@ -28,7 +29,8 @@ export class ProfileComponent implements OnInit{
               private clientService: ClientService,
               private dialog: MatDialog,
               private notificationService: NotificationService,
-              private router: Router) {
+              private router: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
