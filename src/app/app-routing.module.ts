@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'specialistList', component: SpecialistListComponent, canActivate: [AuthGuardService]},
   {path: 'about', component: AboutComponent},
   {path: 'contacts', component: ContactsComponent},
-  {path: 'main', component: HomeComponent}, //, canActivate: [AuthGuardService]
+  {path: 'main', component: HomeComponent},
   {
     path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService],
     children: [

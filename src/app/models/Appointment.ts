@@ -6,3 +6,5 @@ export interface Appointment{
   psyName?: string,
   link?: string
 }
+
+
