@@ -3,3 +3,9 @@
   height: 300px;
 }
 
+.chose-time {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
