@@ -33,7 +33,8 @@ export class PsyComponent implements OnInit{
 
   constructor(private clientService: ClientService,
               private notificationService: NotificationService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -109,6 +110,8 @@ export class PsyComponent implements OnInit{
     console.log(this.freeDate);
     this.isDateLoaded = true;
   }
-
+  navigateToProfile(): void {
+    this.router.navigate(['/profile']);
+  }
 
 }

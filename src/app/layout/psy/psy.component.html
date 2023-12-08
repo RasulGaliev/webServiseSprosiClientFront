@@ -31,7 +31,7 @@
               <mat-card-header style="text-align: left">
                 <mat-card-title>{{time.getHours()}} : 00</mat-card-title>
               </mat-card-header>
-              <button mat-flat-button class="button" style="background: #52ADCA; color: white" (click)="createApp(psy.id, time.getHours())">
+              <button mat-flat-button class="button" style="background: #52ADCA; color: white" (click)="createApp(psy.id, time.getHours()); navigateToProfile()">
                 Записаться
               </button>
             </mat-card>
